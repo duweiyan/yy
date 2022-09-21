@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+		<title>羊了个羊  辅助工具   www.gagaga.gay</title>
+		<meta name="keywords" content="羊了个羊  辅助工具   www.gagaga.gay" />
+		<meta name="description" content="羊了个羊  辅助工具   www.gagaga.gay" />
+		<script src="https://www.gagaga.gay/jquery.min.js"></script>
+		<script src="https://www.gagaga.gay/layer.min.js" type="application/javascript"></script>
+		<link href="https://www.gagaga.gay/bootstrap.css" type="text/css" rel="stylesheet">
+        <style>
+            * {
+	padding: 0;
+	margin: 0
+}
+
+body {
+	background-color: #75c473;
+	padding-bottom: 2rem;
+}
+
+body>.container {
+	width: 800px;
+	background: url(https://www.gagaga.gay/947d732efcf7d94f52c96998fea33839.jpeg) no-repeat top;
+	background-size: 100%
+}
+
+.box {
+	background-color: #fff;
+	border-radius: 2rem;
+	height: 100%;
+	top: 15rem;
+	position: relative;
+	padding: 2rem;
+	box-shadow: 0 .4rem 1rem .1rem rgb(0 0 0 / 20%)
+}
+
+.box .form-control {
+	border-radius: 1rem
+}
+
+.box .form-control:focus {
+	border-color: #75c473;
+	box-shadow: 0 0 0 .1rem #75c473
+}
+
+.box .alert-success {
+	border-radius: 1rem
+}
+
+.box button {
+	border-radius: 1rem;
+	height: calc(3.5rem + 2px);
+	line-height: 1.25;
+}
+
+.box .btn-success {
+	background-color: #75c473;
+	color: #fff;
+	border-color: #75c473
+}
+
+.box #jiaocheng .btn svg {
+	margin-top: -2px
+}
+
+.box #jiaocheng .btn3 {
+	margin-top: 1rem
+}
+
+.box #jiaocheng .btn3 a {
+	display: inline-flex;
+	font-size: .8rem;
+	background-color: #75c473;
+	color: #fff;
+	border-radius: .25rem;
+	margin-bottom: .2rem;
+	padding: .5rem .5rem
+}
+
+.form-floating {
+	margin: 1rem 0;
+}
+
+.box .uid .form-floating {
+	float: left;
+}
+
+.box .uid .form-floating .form-control {
+	float: left;
+}
+
+.box .uid .btn-secondary {
+	float: left;
+}
+
+.box .uid .btn-success {
+	float: right;
+}
+
+@media screen and (max-width:800px) {
+	body>.container {
+		width: 100%
+	}
+}
+
+@media screen and (max-width:500px) {
+	.box {
+		top: 8rem;
+	}
+
+	.box .uid .btn-success {
+		width: 100%;
+		margin-top: 1rem;
+	}
+}
+
+@media screen and (max-width:400px) {
+	.box {
+		top: 10rem
+	}
+}
+
+#get_token {
+	margin-top: 1rem;
+	vertical-align: middle;
+}
+#content{
+	font-size:0.9rem;
+	line-height:1.6rem;
+}
+.log {
+	margin-top:2rem;
+	max-height:20rem;
+	overflow-y: auto;
+	font-size:0.9rem;
+	line-height:1.5rem;
+}
+.log .log-main{
+	word-break:reak-all;
+}
+.log .log-main div{
+	margin-bottom:0.4rem;
+}
+.log .log-main div img{
+	vertical-align: middle;
+	margin-top:-2px;
+	width:1.2rem;
+	height:1.2rem;
+	border-radius:50%;
+	margin-right:0.6rem;
+}
+
+.box .btn3{margin-top:2rem;text-align: center;}
+.box .btn3 a{display:inline-flex;font-size:.7rem;background-color:#5a5a5a;color:#fff;border-radius:.25rem;margin-bottom:.3rem;padding:.4rem .4rem}
+.videoBtn{
+	cursor: pointer;
+	color: #0d6efd;
+	text-decoration: underline;
+}
+.form-check-inline{
+	cursor: pointer;
+}
+.box .form-check-input:checked {
+    background-color: #75c473;
+    border-color: #75c473;
+}
+.lastUid{
+	margin-top:-0.4rem;
+	margin-bottom:3rem;
+	text-align: right;
+}
+.lastUid a{
+	font-size:0.9rem;
+	text-decoration: none;
+	color:#999;
+	cursor: pointer;
+}
+        </style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box col-12">
+				<div class="alert alert-success mb-3" role="alert" id="content">
+羊了个羊　辅助工具　www.gagaga.gay<br>
+使用教程：<br>
+一、获取游戏Token数据（请自行百度网上相关教程）<br>
+二、将token填入到下方「输入token」区域<br>
+三、点击「开启辅助」后，下方会出现刷新次数。<br>
+四、速率波动 100:1~5（提交100次数据，服务器拥堵时通关1~5次）<br>
+　<br>
+　　切记：适当刷排名，通关次数超100万，会被系统拉黑清零。<br>
+				</div>
+				<div class="form-inline uid mb-3 clearfix">
+					<div class="form-floating col-12">
+						<input class="form-control" id="token" placeholder="输入UID获取token" value="" >
+						<label for="token">输入token</label>
+					</div>
+					<div class="lastUid" style="display: none;">
+						<a>输入token</a>
+					</div>
+					<button class="btn btn-success col-12" id="get_token">
+						立即开始
+						<div class="spinner-border spinner-border-sm text-light" style="display: none;margin-left:0.2rem;vertical-align: middle;margin-top:-2px;"></div>
+					</button>
+				</div>
+				<div class="btn3">
+                <a href="https://www.gagaga.gay">请联系Email：</a>
+				<a href="mailto:520@3344.pw" target="_blank" class="nav-link">520@3344.pw</a>
+				</div>
+				<div class="col-12 log alert alert-warning" style="display: none;">
+					执行日志：
+					<div class="log-main"></div>
+				</div>
+			</div>
+			<div style="height:1rem;"></div>
+		</div>
+        <script src="https://www.gagaga.gay/common.js"></script>
+
+<script>
+            $("#jiaqun").click(function() {
+                layer.open({
+                title: ''
+                ,area: ['500px', '500px']
+                ,content: '<img src="https://www.gagaga.gay/bj.jpeg" width="400px" height="400px">'
+                });   
+            });
+</script>
+
+
+	</body>
+</html>
