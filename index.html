@@ -1,74 +1,148 @@
-
-<!DOCTYPE html>
-<html>
-
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-  <title>羊了个羊 辅助工具</title>
-  <link href="https://www.gagaga.gay/bootstrap.css" type="text/css"
-    rel="stylesheet">
-  <link href="https://www.gagaga.gay/1.0.2.css" type="text/css" rel="stylesheet">
-  <script src="https://www.gagaga.gay/jquery.min.js"></script>
-  <script src="https://www.gagaga.gay/layer.min.js"
-    type="application/javascript"></script>
-  <script src="https://www.gagaga.gay/protobuf.min.js"></script>
-  <link rel="stylesheet"
-    href="https://www.gagaga.gay/layer.css?v=3.5.1"
-    id="layuicss-layer">
-  <style type="text/css">
-    @font-face {
-      font-family: "element-icons";
-      src: url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.woff') format('woff'),
-        url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.ttf ') format('truetype');
-      /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+  <title>404 Not Found</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    main {
+      position: fixed;
+      background: #333;
+      font: 16em/0 arial;
+      width: 100%;
+      height: 100%;
+    }
+
+    .text-line {
+      font-size: .5em;
+    }
+
+    .text-line2 {
+      font-size: .2em;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .text-copy {
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 7% 28%;
+      stroke-width: 3px;
+      -webkit-animation: stroke-offset 8s infinite linear;
+      animation: stroke-offset 8s infinite linear;
+    }
+
+    .text-copy:nth-child(1) {
+      stroke: #360745;
+      stroke-dashoffset: 7%;
+    }
+
+    .text-copy:nth-child(2) {
+      stroke: #d61c59;
+      stroke-dashoffset: 14%;
+    }
+
+    .text-copy:nth-child(3) {
+      stroke: #e7d84b;
+      stroke-dashoffset: 21%;
+    }
+
+    .text-copy:nth-child(4) {
+      stroke: #efeac5;
+      stroke-dashoffset: 28%;
+    }
+
+    .text-copy:nth-child(5) {
+      stroke: #1b8798;
+      stroke-dashoffset: 35%;
+    }
+
+    @-webkit-keyframes stroke-offset {
+      50% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+      }
+    }
+
+    @keyframes stroke-offset {
+      50% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+      }
+    }
+
+    .back {
+      position: absolute;
+      display: block;
+      bottom: 15%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .back a {
+      color: #fff;
+      font-size: 18px;
+      padding: 8px 16px;
+      border: 1px solid #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      -webkit-transition: color, background .3s;
+      -moz-transition: color, background .3s;
+      -o-transition: color, background .3s;
+      transition: color, background .3s;
+    }
+
+    .back a:hover {
+      color: #000;
+      background: #fff;
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="box col-12">
-      <div class="text-center alert alert-success mb-2" role="alert" id="content">羊了个羊　辅助工具　www.gagaga.gay<br>
-使用教程<br>
-        一、获取游戏Token数据（请自行百度教程）<br>
-        二、将token填入到下方「输入token」区域<br>
-        三、点击「开启辅助」后，下方会出现刷新次数。<br>
-        四、速率波动 1:1~5（1秒钟1~5次数据发送）<br>
-        　<br>
-      　切记：如果话题正常，显示「通关失败」，就是被系统拉黑了。</div>
-      <div class="form-floating mb-2">
-        <input class="form-control" id="token" placeholder="请输入你的 token">
-        <label for="token">请输入你抓取的 token</label>
-      </div>
-      <div class="form-floating">
-        <input class="form-control" id="frequency" placeholder="请输入你的通关次数" value="100" maxlength="4">
-        <label for="frequency">请输入你想通关的次数（最大9999次）</label>
-      </div>
-      <div class="form-floating mt-1">
-        <input class="form-control" id="frequencyLimit" placeholder="请输入你的运行线程" value="1" maxlength="2">
-        <label for="frequency">请输入你的运行线程(最大99线程)</label>
-      </div>
-      <div class="form-inline mt-2 mb-2 text-center">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="get_type" value="1" checked>
-          <label class="form-check-label" for="inlineRadio1">刷通关次数</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="get_type" value="2">
-          <label class="form-check-label" for="inlineRadio2">刷话题次数</label>
-        </div>
-      </div>
-      <button class="btn btn-success col-12 mb-3" id="get_code">开启辅助</button>
-      <button class="btn btn-danger col-12" id="stop_limit">停止辅助</button>
-    <!--  <div class="text-center alert alert-success mb-2" role="alert" id="">
-        短时间多次通关会被系统拉黑，拉黑后再刷就会提示通关失败
-        </br>加入羊群失败，说明服务器负载过高，等晚点再刷
-      </div>!--> </br> </br>
-      <div class="text-center alert alert-success mb-2" role="alert" id="">网站接口随时可能时效<br>失效后可使用网球规则<br>E-mail:520@3344.pw<br>鸣谢：【IOS黑科技】<br>本站接口JS取自该网站<br>
-    </div>
+<main>
+  <svg viewBox="0 -40 600 320">
+    <symbol id="s-text">
+      <text text-anchor="middle" x="50%" y="40%" class="text-line">404</text>
+      <text text-anchor="middle" x="50%" y="60%" class="text-line2">Not Found</text>
+    </symbol>
+    <g class="g-ants">
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+    </g>
+  </svg>
+  <div class="back">
+    <a href="https://www.wwttl.com/">网站更新中　　请稍后访问</a>
+    <a href="https://www.wwttl.com/">Http://www.gagaga.gay</a>
   </div>
-  <script src="https://www.gagaga.gay/conn.js"></script>
+</main>
 </body>
 </html>
+
+/ 屏蔽 REST API
+if ( version_compare( get_bloginfo( 'version' ), '4.7', '>=' ) ) {
+    function disable_rest_api( $access ) {
+        return new WP_Error( 'rest_cannot_acess', '无访问权限', array( 'status' => 403 ) );
+    }
+    add_filter( 'rest_authentication_errors', 'disable_rest_api' );
+} else {
+    // Filters for WP-API version 1.x
+    add_filter( 'json_enabled', '__return_false' );
+    add_filter( 'json_jsonp_enabled', '__return_false' );
+    // Filters for WP-API version 2.x
+    add_filter( 'rest_enabled', '__return_false' );
+    add_filter( 'rest_jsonp_enabled', '__return_false' );
+}
+// 移除头部 wp-json 标签和 HTTP header 中的 link
+remove_action('wp_head', 'rest_output_link_wp_head', 10 );
+remove_action('template_redirect', 'rest_output_link_header', 11 );
