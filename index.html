@@ -1,133 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-  <title>羊了个羊  辅助工具</title>
-  <link href="./bootstrap.css" type="text/css" rel="stylesheet">
-  <link href="./ga.css" type="text/css" rel="stylesheet">
-  <script src="./jquery.min.js"></script>
-  <script src="./layer.min.js" type="application/javascript"></script>
-  <script src="./protobuf.min.js"></script>
-  <link rel="stylesheet" href="./layer.css" id="layuicss-layer">
-  <style type="text/css">
-    @font-face {
-      font-family: &quot;element-icons&quot;;
-      src: url(&#x27;chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.woff&#x27;) format(&#x27;woff&#x27;),
-        url(&#x27;chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.ttf &#x27;) format(&#x27;truetype&#x27;);
-      /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    }
-  </style>
 </head>
-
-  <div class="container">
-    <div class="box col-12">
- <div class="text-center alert alert-success mb-2" role="alert" id="">点击 【开启辅助】 后<br>下方数字为当前服务器数据
-      </div>
-          <div class="text-center alert alert-success mb-2" role="alert" id="content">羊了个羊　辅助工具　www.gagaga.gay<br>
-使用教程<br>
-        一、获取游戏Token数据（请自行百度）<br>
-        二、将 Token 填入到「Token」对话框。<br>
-        三、官方限制60秒记录一次，多开无用。<br>
-        　<br>
-      　选择「黑名单检测」点击【开启辅助】
-<br>显示「已通关2次」号码正常可刷<br>显示「没有权限」则是Token错误<br>显示「通关失败」就是被拉黑了。</div>
-      <div class="form-floating mb-2">
-        <input class="form-control" id="token" placeholder="请输入你的 token">
-        <label for="token">你的 token</label>
-      </div>
-      <div class="form-floating">
-        <input class="form-control" id="frequency" placeholder="请输入你的通关次数" value="1" maxlength="4">
-        <label for="frequency">通关次数（默认“1”为了黑号检测方便）</label>
-      </div>
-      <div class="form-inline mt-2 mb-2 text-center">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="get_type" value="1">
-          <label class="form-check-label" for="inlineRadio1">通关次数</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="get_type" value="2" checked="">
-          <label class="form-check-label" for="inlineRadio2">黑名单检测</label>
-        </div>
-      </div>
-      <button class="btn btn-success col-12 mb-3" id="get_code">开启辅助</button>
-
-      <div class="text-center alert alert-success mb-2" role="alert" id="">
-网站接口随时可能时效<br>失效后可使用网球规则<br>E-mail:520@3344.pw<br>本站接口JS取自公用网络<br>
-    </div>
-	  <div class="mb-3">
-          <div class="text-center" id="jiaocheng">
-            
-            <div class="btn3">
-                     
-            </div>
-    </div>
-  </div>
-  <script src="./gaconn.js"></script>
-
-</div></div>
-
-
-import javax.swing.*;
-import java.awt.*;
-
-public class heart extends JFrame {
-    private static final long serialVersionUID = -1284128891908775645L;
-
-    // 定义加载窗口大小
-
-    public static final int GAME_WIDTH = 500;
-
-    public static final int GAME_HEIGHT = 500;
-    // 获取屏幕窗口大小
-    public static final int WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
-
-    public static final int HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
-
-    public heart() {
-
-        // 设置窗口标题
-        this.setTitle("心形曲线");
-        // 设置窗口初始位置
-        this.setLocation((WIDTH - GAME_WIDTH) / 2, (HEIGHT - GAME_HEIGHT) / 2);
-        // 设置窗口大小
-        this.setSize(GAME_WIDTH, GAME_HEIGHT);
-        // 设置背景色
-        this.setBackground(Color.BLACK);
-        // 设置窗口关闭方式
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // 设置窗口显示
-        this.setVisible(true);
-    }
-    @Override
-    public void paint(Graphics g) {
-        double x, y, r;
-        Image OffScreen = createImage(GAME_WIDTH, GAME_HEIGHT);
-        Graphics drawOffScreen = OffScreen.getGraphics();
-        for (int i = 0; i < 90; i++) {
-            for (int j = 0; j < 90; j++) {
-                r = Math.PI / 45 * i * (1 - Math.sin(Math.PI / 45 * j)) * 18;
-                x = r * Math.cos(Math.PI / 45 * j) * Math.sin(Math.PI / 45 * i) + GAME_WIDTH / 2;
-                y = -r * Math.sin(Math.PI / 45 * j) + GAME_HEIGHT / 4;
-                //设置画笔颜色
-                drawOffScreen.setColor(Color.PINK);
-                // 绘制椭圆
-                drawOffScreen.fillOval((int) x, (int) y, 2, 2);
-            }
-            // 生成图片
-            g.drawImage(OffScreen, 0, 0, this);
-        }
-    }
-
-    public static void main(String[] args) {
-        heart demo = new heart();
-        demo.setVisible(true);
-    }
+<body style="  overflow:hidden;">
+	<canvas id="c"></canvas>
+	<script>
+   		var b = document.body;
+    	var c = document.getElementsByTagName('canvas')[0];
+    	var a = c.getContext('2d');
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    // 是移动端打开
+    document.write('<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">');
+} else {
+    // 不是移动端打开
 }
-
-
-
-
+	</script>
+ <div><img style="position:absolute;
+width:250px;
+height:250px;
+top: 20%;
+left: 52%;
+transform: translate(-50%,-50%);" 
+src="1.jpg"></div>
+<audio autoplay="autopaly" loop="loop" id="audios" preload="auto">
+    <source src="http://music.163.com/song/media/outer/url?id=558290126.mp3" />
+</audio>
 </body></html>
